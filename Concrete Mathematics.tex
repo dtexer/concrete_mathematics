@@ -1,0 +1,204 @@
+\documentclass[a4paper]{article}
+\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[ansinew]{inputenc}
+\usepackage{verbatim} 
+\usepackage{setspace}
+\usepackage{amssymb,amsmath,amsfonts,euler}
+
+\begin{document}
+
+CONCRETE
+\hrule 
+MATHEMATICS
+
+Dedicated to Leonhard Euler (1707-1783)
+\newpage
+
+CONCRETE
+\hrule 
+MATHEMATICS
+\\
+Ronald L. Graham \\
+AT\&T Bell Laboratories \\
+Donald E. Knuth \\
+Stanford University \\
+Oren Patashnik \\
+Stanford University \\
+
+\newpage
+
+\section*{Preface}
+\hrule
+\vspace{10px}
+THIS BOOK IS BASED on a course of the same name that has been taught
+annually at Stanford University since 1970. About fifty students have taken it
+each year-juniors and seniors, but mostly graduate students-and alumni
+of these classes have begun to spawn similar courses elsewhere. Thus the time
+seems ripe to present the material to a wider audience (including sophomores).\\
+\indent It was a dark and stormy decade when Concrete Mathematics was born.
+Long-held values were constantly being questioned during those turbulent
+years; college campuses were hotbeds of controversy. The college curriculum
+itself was challenged, and mathematics did not escape scrutiny. John Ham-
+mersley had just written a thought-provoking article ``On the enfeeblement of
+mathematical skills by `Modern Mathematics' and by similar soft intellectual
+trash in schools and universities'' [145]; other worried mathematicians [272]
+even asked, ``Can mathematics be saved?'' One of the present authors had
+ embarked on a series of books called The Art of Computer Programming, and
+in writing the first volume he (DEK) had found that there were mathematical
+tools missing from his repertoire; the mathematics he needed for a thorough,
+ well-grounded understanding of computer programs was quite different from
+ what he'd learned as a mathematics major in college. So he introduced a new
+course, teaching what he wished somebody had taught him.
+\\
+\indent The course title ``Concrete Mathematics'' was originally intended as an
+antidote to ``Abstract Mathematics,'' since concrete classical results were rap-
+idly being swept out of the modern mathematical curriculum by a new wave
+of abstract ideas popularly called the `New Math!' Abstract mathematics is a
+wonderful subject, and there's nothing wrong with it: It's beautiful, general,
+and useful. But its adherents had become deluded that the rest of mathemat-
+ics was inferior and no longer worthy of attention. The goal of generalization
+had become so fashionable that a generation of mathematicians had become
+unable to relish beauty in the particular, to enjoy the challenge of solving
+ quantitative problems, or to appreciate the value of technique. Abstract math-
+ematics was becoming inbred and losing touch with reality; mathematical ed-
+ucation needed a concrete counterweight in order to restore a healthy balance. \\
+\indent When DEK taught Concrete Mathematics at Stanford for the first time,
+ he explained the somewhat strange title by saying that it was his attempt to teach a math course that was hard instead of soft. He announced that,
+contrary to the expectations of some of his colleagues, he was not going to
+teach the Theory of Aggregates, nor Stone's Embedding Theorem, nor even
+the Stone-Tech compactification. (Several students from the civil engineering
+department got up and quietly left the room.) \\
+Although Concrete Mathematics began as a reaction against other trends,
+the main reasons for its existence were positive instead of negative. And as
+the course continued its popular place in the curriculum, its subject matter
+``solidified'' and proved to be valuable in a variety of new applications. Mean-
+while, independent confirmation for the appropriateness of the name came
+from another direction, when Z. A. Melzak published two volumes entitled
+Companion to Concrete Mathematics [214]. \\
+\indent The material of concrete mathematics may seem at first to be a disparate
+bag of tricks, but practice makes it into a disciplined set of tools. Indeed, the
+techniques have an underlying unity and a strong appeal for many people.
+When another one of the authors (RLG) first taught the course in 1979, the
+students had such fun that they decided to hold a class reunion a year later. \\
+\indent But what exactly is Concrete Mathematics? It is a blend of continuous
+and diSCRETE mathematics. More concretely, it is the controlled manipulation
+of mathematical formulas, using a collection of techniques for solving prob-
+lems. Once you, the reader, have learned the material in this book, all you
+will need is a cool head, a large sheet of paper, and fairly decent handwriting
+in order to evaluate horrendous-looking sums, to solve complex recurrence
+relations, and to discover subtle patterns in data. You will be so fluent in
+algebraic techniques that you will often find it easier to obtain exact results
+than to settle for approximate answers that are valid only in a limiting sense.
+The major topics treated in this book include sums, recurrences, ele-
+mentary number theory, binomial coefficients, generating functions, discrete
+probability, and asymptotic methods. The emphasis is on manipulative tech-
+nique rather than on existence theorems or combinatorial reasoning; the goal
+is for each reader to become as familiar with discrete operations (like the
+greatest-integer function and finite summation) as a student of calculus is
+familiar with continuous operations (like the absolute-value function and in-
+finite integration). \\
+\indent Notice that this list of topics is quite different from what is usually taught
+nowadays in undergraduate courses entitled ``Discrete Mathematics!' There-
+fore the subject needs a distinctive name, and ``Concrete Mathematics'' has
+proved to be as suitable as any other.
+The original textbook for Stanford's course on concrete mathematics was
+the ``Mathematical Preliminaries'' section in The Art of Computer Program-
+ming [173]. But the presentation in those 110 pages is quite terse, so another
+author (OP) was inspired to draft a lengthy set of supplementary notes. The
+present book is an outgrowth of those notes; it is an expansion of, and a more
+leisurely introduction to, the material of Mathematical Preliminaries. Some of
+the more advanced parts have been omitted; on the other hand, several topics
+not found there have been included here so that the story will be complete.
+The authors have enjoyed putting this book together because the subject
+began to jell and to take on a life of its own before our eyes; this book almost
+seemed to write itself. Moreover, the somewhat unconventional approaches
+we have adopted in several places have seemed to fit together so well, after
+these years of experience, that we can't help feeling that this book is a kind
+of manifesto about our favorite way to do mathematics. So we think the book
+has turned out to be a tale of mathematical beauty and surprise, and we hope
+that our readers will share at least E of the pleasure we had while writing it.
+Since this book was born in a university setting, we have tried to capture
+the spirit of a contemporary classroom by adopting an informal style. Some
+people think that mathematics is a serious business that must always be cold
+and dry; but we think mathematics is fun, and we aren't ashamed to admit
+the fact. Why should a strict boundary line be drawn between work and
+play? Concrete mathematics is full of appealing patterns; the manipulations
+are not always easy, but the answers can be astonishingly attractive. The
+joys and sorrows of mathematical work are reflected explicitly in this book
+because they are part of our lives.
+Students always know better than their teachers, so we have asked the
+first students of this material to contribute their frank opinions, as ``graffiti''
+in the margins. Some of these marginal markings are merely corny, some
+are profound; some of them warn about ambiguities or obscurities, others
+are typical comments made by wise guys in the back row; some are positive,
+some are negative, some are zero. But they all are real indications of feelings
+that should make the text material easier to assimilate. (The inspiration for
+such marginal notes comes from a student handbook entitled Approaching
+Stanford, where the official university line is counterbalanced by the remarks
+of outgoing students. For example, Stanford says, ``There are a few things
+you cannot miss in this amorphous shape which is Stanford''; the margin
+says, ``Amorphous . . . what the h*** does that mean? Typical of the pseudo-
+intellectualism around here.'' Stanford: ``There is no end to the potential of
+a group of students living together.'' Graffito: ``Stanford dorms are like zoos
+without a keeper.``)
+The margins also include direct quotations from famous mathematicians
+of past generations, giving the actual words in which they announced some
+of their fundamental discoveries. Somehow it seems appropriate to mix the
+words of Leibniz, Euler, Gauss, and others with those of the people who
+will be continuing the work. Mathematics is an ongoing endeavor for people
+everywhere; many strands are being woven into one rich fabric.
+This book contains more than 500 exercises, divided into six categories:
+\begin{itemize}
+\item \textbf{Warmups are} exercises that EVERY READER should to do when first reading this material.
+\item \textbf{Basics are} are exercises to develop facts that are best learned by trying one's own derivation rather than by reading somebody else's,
+\item \textbf{Homework}  exercises are problems intended to deepen an understanding of material in the current chapter.
+\item \textbf{Exam Problems} typically involve ideas from two or more chapters simultaneously; they are generally intended for use in take-home exams (not for in-class exams under time pressure).
+\item \textbf{Bonus problems} go beyond what an average student of concrete mathematics is expected to handle while taking a course based on this book;
+they extend the text in interesting ways.
+\item \textbf{Research problems} may or may not be humanly solvable, but the ones
+presented here seem to be worth a try (without time pressure).
+\end{itemize}
+Answers to all the exercises appear in Appendix A, often with additional information about related results. (Of course, the ``answers'' to research problems are incomplete; but even in these cases, partial results or hints are given that might prove to be helpful.) Readers are encouraged to look at the answers,especially the answers to the warmup problems, but only AFTER making a
+serious attempt to solve the problem without peeking. \\
+\indent We have tried in Appendix C to give proper credit to the sources of each exercise, since a great deal of creativity and/or luck often goes into the design of an instructive problem. Mathematicians have unfortunately developed a tradition of borrowing exercises without any acknowledgment; we believe that the opposite tradition, practiced for example by books and
+magazines about chess (where names, dates, and locations of original chess
+problems are routinely specified) is far superior. However, we have not been able to pin down the sources of many problems that have become part of the
+folklore. If any reader knows the origin of an exercise for which our citation
+is missing or inaccurate, we would be glad to learn the details so that we can
+correct the omission in subsequent editions of this book.\\
+\indent The typeface used for mathematics throughout this book is a new design
+by Hermann Zapf [310], commissioned by the American Mathematical Society
+and developed with the help of a committee that included B. Beeton, R. P.
+Boas, L. K. Durst, D. E. Knuth, P. Murdock, R. S. Palais, P. Renz, E. Swanson,
+S. B. Whidden, and W. B. Woolf. The underlying philosophy of Zapf's design
+is to capture the flavor of mathematics as it might be written by a mathematician with excellent handwriting. A handwritten rather than mechanical style is appropriate because people generally create mathematics with pen, pencil, or chalk. (For example, one of the trademarks of the new design is the symbol for zero, '0', which is slightly pointed at the top because a handwritten zero
+rarely closes together smoothly when the curve returns to its starting point.)
+The letters are upright, not italic, so that subscripts, superscripts, and ac-
+cents are more easily fitted with ordinary symbols. This new type family has
+been named AM.9 Euler, after the great Swiss mathematician Leonhard Euler
+(1707-1783) who discovered so much of mathematics as we know it today.
+The alphabets include Euler Text (Aa Bb Cc through Xx Yy Zz), Euler Fraktur ($\mathfrak{Aa\; Bb\; Cc}$ through $\mathfrak{Xx\; Yy\; Zz}$), and Euler Script Capitals ($\mathscr{A\; B\; C}$ through $\mathscr{X \; Y\; Z}$), as well as Euler Greek ($\mathord{A \alpha\; B \beta\; \Gamma \gamma }$ through $\mathord{X \chi\; \Psi \psi\; \Omega \omega}$) and special symbols such as p and K. We are especially pleased to be able to inaugurate the Euler family of typefaces in this book, because Leonhard Euler's spirit truly lives on every page: Concrete mathematics is {\tt Eulerian} mathematics. \\
+\indent The authors are extremely grateful to Andrei Broder, Ernst Mayr, An-
+drew Yao, and Frances Yao, who contributed greatly to this book during the
+years that they taught Concrete Mathematics at Stanford. Furthermore we
+offer 1024 thanks to the teaching assistants who creatively transcribed what
+took place in class each year and who helped to design the examination questions; their names are listed in Appendix C. This book, which is essentially
+a compendium of sixteen years' worth of lecture notes, would have been impossible without their first-rate work. \\
+\indent Many other people have helped to make this book a reality. For example,
+we wish to commend the students at Brown, Columbia, CUNY, Princeton,
+Rice, and Stanford who contributed the choice \emph{graffiti} and helped to debug
+our first drafts. Our contacts at Addison-Wesley were especially efficient
+and helpful; in particular, we wish to thank our publisher (Peter Gordon),
+production supervisor (Bette Aaronson), designer (Roy Brown), and copy editor (Lyn Dupre). The National Science Foundation and the Office of Naval
+Research have given invaluable support. Cheryl Graham was tremendously
+helpful as we prepared the index. And above all, we wish to thank our wives
+(Fan, Jill, and Amy) for their patience, support, encouragement, and ideas.\\
+\indent We have tried to produce a perfect book, but we are imperfect authors.
+Therefore we solicit help in correcting any mistakes that we've made. A reward of \$2.56 will gratefully be paid to the first finder of any error, whether
+it is mathematical, historical, or typographical.
+
+
+
+
+\end{document}
